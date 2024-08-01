@@ -352,7 +352,7 @@ class _HomeState extends State<Home> {
                                   color: Colors.grey,
                                 ),
                               ),
-                              Text("The date for this particular day will be", textAlign: TextAlign.left,
+                              Text("The date for this particular day is", textAlign: TextAlign.left,
                                   style: GoogleFonts.inter(
                                       color: const Color(0xFF6D6D6D),
                                       fontWeight: FontWeight.w500,
@@ -369,7 +369,7 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               SizedBox(height: 14),
-                              Text("The week of the year will be", textAlign: TextAlign.left,
+                              Text("The week of the year is", textAlign: TextAlign.left,
                                   style: GoogleFonts.inter(
                                       color: const Color(0xFF6D6D6D),
                                       fontWeight: FontWeight.w500,
@@ -450,7 +450,7 @@ class _HomeState extends State<Home> {
                   color: Colors.grey,
                   fontWeight: FontWeight.w500,
                   letterSpacing: -0.4,
-                  fontSize: 12
+                  fontSize: 13
               ),
               textAlign: TextAlign.center,
             ),
