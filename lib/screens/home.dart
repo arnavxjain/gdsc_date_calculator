@@ -282,7 +282,7 @@ class _HomeState extends State<Home> {
                 // print(dayCount);
                 // print(yearCount);
 
-                if (dayCount > 365 || yearCount <= 999) {
+                if (dayCount > 365 || yearCount <= 999 || dayCount < 1) {
                   print('OL');
                   ScaffoldMessenger.of(context).showSnackBar(snackBar2);
 
@@ -291,25 +291,16 @@ class _HomeState extends State<Home> {
                 } else {
                   print('verified');
 
-                  // Specify the future year and the day of the year (1-based index)
                   int futureYear = yearCount;
-                  int dayOfYear = dayCount; // Change this to the specific day of the year
+                  int dayOfYear = dayCount;
 
-                  // Start with the first day of the future year
                   DateTime startDate = DateTime(futureYear, 1, 1);
 
-                  // Calculate the target date by adding (dayOfYear - 1) days to the start date
                   DateTime targetDate = startDate.add(Duration(days: dayOfYear - 1));
 
-                  // Calculate the week of the year
-                  int firstDayOfWeek = startDate.weekday; // 1 (Monday) - 7 (Sunday)
+                  int firstDayOfWeek = startDate.weekday;
                   int adjustedDayOfYear = dayOfYear + (firstDayOfWeek - 1);
                   int weekOfYear = (adjustedDayOfYear / 7).ceil();
-
-                  // Print the target date and the week of the year
-                  print("Date on day $dayOfYear of the year $futureYear: ${targetDate.toLocal()}");
-                  print("Week of the year: $weekOfYear");
-                  print(isLeapYear(yearCount));
 
                   String formattedDate = DateFormat('dd/MM/yyyy').format(targetDate);
 
