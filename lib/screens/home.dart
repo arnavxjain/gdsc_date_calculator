@@ -386,7 +386,7 @@ class _HomeState extends State<Home> {
                                       fontSize: 18
                                   )
                               ),
-                              Text(formattedDate.toString(), textAlign: TextAlign.left,
+                              Text(weekOfYear.toString(), textAlign: TextAlign.left,
                                 style: GoogleFonts.abel(
                                     color: const Color(0xFF6385FF),
                                     fontWeight: FontWeight.w600,
@@ -394,6 +394,24 @@ class _HomeState extends State<Home> {
                                     fontSize: 20
                                 ),
                               ),
+                              // {
+                              SizedBox(height: 14,),
+                              isLeapYear(futureYear) ? Text("$futureYear will be a leap year.", textAlign: TextAlign.left,
+                                style: GoogleFonts.inter(
+                                color: const Color(0xFF00855F),
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: -0.6,
+                                fontSize: 18
+                              )) : Text("$futureYear will not be a leap year.", textAlign: TextAlign.left,
+                            style: GoogleFonts.inter(
+                                color: const Color(0xFF00855F),
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: -0.6,
+                                fontSize: 20
+                            )
+                            // ),
+                              ),
+                              // }
                             ],
                           ),
                         );
