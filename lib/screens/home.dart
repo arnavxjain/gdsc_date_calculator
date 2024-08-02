@@ -327,7 +327,7 @@ class _HomeState extends State<Home> {
                       context: context,
                       builder: (BuildContext context) {
                         return Container(
-                          padding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+                          padding: EdgeInsets.symmetric(vertical: 14, horizontal: 20),
                           height: 315,
                           width: MediaQuery.of(context).size.width,
                           decoration: ShapeDecoration(
