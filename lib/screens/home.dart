@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
       content: Text(
           'No input values detected. Please enter a valid number',
           style: TextStyle(
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
               letterSpacing: -0.5,
               fontSize: 14
           )
@@ -42,9 +42,9 @@ class _HomeState extends State<Home> {
 
     const snackBar2 = SnackBar(
       content: Text(
-          'Make sure the number of days is under 365 & Year has 4 digits',
+          'Make sure the number of days is less than 366 & Year has 4 digits',
           style: TextStyle(
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
               letterSpacing: -0.5,
               fontSize: 14
           )
@@ -73,6 +73,7 @@ class _HomeState extends State<Home> {
     }
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xFFFFFFFF),
       body: Column(
         children: [
@@ -443,8 +444,89 @@ class _HomeState extends State<Home> {
             ),
           ),
           const Expanded(child: SizedBox.shrink()),
+          CupertinoButton(
+              child: Container(
+                margin: EdgeInsets.only(bottom: 5),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                decoration: ShapeDecoration(
+                  shape: SmoothRectangleBorder(
+                    borderRadius: SmoothBorderRadius(
+                      cornerRadius: 12,
+                      cornerSmoothing: 0.9,
+                    ),
+                  ),
+                  color: Color(0xFFF1F1F1)
+                ),
+                child: Text("About this App",
+                  style: GoogleFonts.inter(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: -0.6,
+                      fontSize: 15
+                  ),
+                ),
+              ),
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Container(
+                        padding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+                        height: 240,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: ShapeDecoration(
+                          color: const Color(0xFFE6E6E6),
+                          shape: SmoothRectangleBorder(
+                            borderRadius: SmoothBorderRadius(
+                              cornerRadius: 12,
+                              cornerSmoothing: 0.9,
+                            ),
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("About this App",
+                                  style: GoogleFonts.inter(
+                                      color: const Color(0xFF6D6D6D),
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: -0.6,
+                                      fontSize: 19
+                                  ),
+                                ),
+                                CupertinoButton(
+                                    padding: EdgeInsets.zero,
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Icon(CupertinoIcons.multiply_circle_fill, color: Colors.grey, size: 30)
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 10),
+                            Text("This app was created as a task for the Google Developer Student Club, by student Arnav Jain. It uses Flutter to run the app, and makes use of multiple libraries for enhancement.", textAlign: TextAlign.left,
+                                style: GoogleFonts.inter(
+                                    color: const Color(0xFF00855F),
+                                    fontWeight: FontWeight.w500,
+                                    letterSpacing: -0.6,
+                                    fontSize: 15
+                                )
+                              // ),
+                            ),
+                          ],
+                        )
+                      );
+                    }
+                );
+
+              },
+          ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 40),
+            padding: const EdgeInsets.only(left: 25, right: 25, bottom: 40),
             child: Text("App developed and managed by Arnav Jain",
               style: GoogleFonts.inter(
                   color: Colors.grey,
