@@ -309,7 +309,7 @@ class _HomeState extends State<Home> {
                       builder: (BuildContext context) {
                         return Container(
                           padding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-                          height: 300,
+                          height: 315,
                           width: MediaQuery.of(context).size.width,
                           decoration: ShapeDecoration(
                             color: const Color(0xFFE6E6E6),
@@ -346,7 +346,7 @@ class _HomeState extends State<Home> {
                               ),
                               Center(
                                 child: Container(
-                                  margin: EdgeInsets.only(top: 10, bottom: 15),
+                                  margin: EdgeInsets.only(top: 10, bottom: 19),
                                   width: MediaQuery.of(context).size.width - 20,
                                   height: 1,
                                   color: Colors.grey,
