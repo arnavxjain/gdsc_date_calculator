@@ -140,7 +140,7 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text("Today is",
+                Text("Today's date →",
                   style: GoogleFonts.inter(
                       color: Colors.black87,
                       fontWeight: FontWeight.w500,
@@ -231,7 +231,7 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 12),
           Container(
             height: 56,
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 22),
@@ -287,7 +287,7 @@ class _HomeState extends State<Home> {
             ),
           ),
 
-          const SizedBox(height: 15),
+          const SizedBox(height: 25),
 
           CupertinoButton(
             padding: EdgeInsets.zero,
@@ -327,7 +327,7 @@ class _HomeState extends State<Home> {
                       context: context,
                       builder: (BuildContext context) {
                         return Container(
-                          padding: EdgeInsets.symmetric(vertical: 14, horizontal: 20),
+                          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
                           height: 315,
                           width: MediaQuery.of(context).size.width,
                           decoration: ShapeDecoration(
@@ -359,13 +359,13 @@ class _HomeState extends State<Home> {
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
-                                      child: Icon(CupertinoIcons.multiply_circle_fill, color: Colors.grey, size: 30)
+                                      child: const Icon(CupertinoIcons.multiply_circle_fill, color: Colors.grey, size: 30)
                                   ),
                                 ],
                               ),
                               Center(
                                 child: Container(
-                                  margin: EdgeInsets.only(top: 10, bottom: 19),
+                                  margin: const EdgeInsets.only(top: 10, bottom: 19),
                                   width: MediaQuery.of(context).size.width - 20,
                                   height: 1,
                                   color: Colors.grey,
@@ -387,7 +387,7 @@ class _HomeState extends State<Home> {
                                     fontSize: 20
                                 ),
                               ),
-                              SizedBox(height: 14),
+                              const SizedBox(height: 14),
                               Text("The week of the year is", textAlign: TextAlign.left,
                                   style: GoogleFonts.inter(
                                       color: const Color(0xFF6D6D6D),
@@ -405,7 +405,7 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               // {
-                              SizedBox(height: 14,),
+                              const SizedBox(height: 14,),
                               isLeapYear(futureYear) ? Text("$futureYear will be a leap year.", textAlign: TextAlign.left,
                                 style: GoogleFonts.inter(
                                 color: const Color(0xFF00855F),
@@ -464,8 +464,8 @@ class _HomeState extends State<Home> {
           const Expanded(child: SizedBox.shrink()),
           CupertinoButton(
               child: Container(
-                margin: EdgeInsets.only(bottom: 5),
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                margin: const EdgeInsets.only(bottom: 5),
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 decoration: ShapeDecoration(
                   shape: SmoothRectangleBorder(
                     borderRadius: SmoothBorderRadius(
@@ -473,7 +473,7 @@ class _HomeState extends State<Home> {
                       cornerSmoothing: 0.9,
                     ),
                   ),
-                  color: Color(0xFFF1F1F1)
+                  color: const Color(0xFFF1F1F1)
                 ),
                 child: Text("About this App",
                   style: GoogleFonts.inter(
@@ -489,7 +489,7 @@ class _HomeState extends State<Home> {
                     context: context,
                     builder: (BuildContext context) {
                       return Container(
-                        padding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+                        padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
                         height: 240,
                         width: MediaQuery.of(context).size.width,
                         decoration: ShapeDecoration(
@@ -521,11 +521,11 @@ class _HomeState extends State<Home> {
                                     onPressed: () {
                                       Navigator.pop(context);
                                     },
-                                    child: Icon(CupertinoIcons.multiply_circle_fill, color: Colors.grey, size: 30)
+                                    child: const Icon(CupertinoIcons.multiply_circle_fill, color: Colors.grey, size: 30)
                                 ),
                               ],
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Text("This app was created as a task for the Google Developer Student Club, by student Arnav Jain. It uses Flutter to run the app, and makes use of multiple libraries for enhancement.", textAlign: TextAlign.left,
                                 style: GoogleFonts.inter(
                                     color: const Color(0xFF00855F),
