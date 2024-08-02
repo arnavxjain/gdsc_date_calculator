@@ -52,6 +52,19 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.redAccent,
     );
 
+    const gdscSnackbar = SnackBar(
+      content: Text(
+          'Google Developer Student Club 🐐❤️',
+          style: TextStyle(
+              fontWeight: FontWeight.w600,
+              letterSpacing: -0.5,
+              fontSize: 14,
+            color: Colors.black87
+          )
+      ),
+      backgroundColor: Colors.greenAccent,
+    );
+
     bool isLeapYear(int year) {
       if (year % 4 == 0) {
         if (year % 100 == 0) {
@@ -99,7 +112,12 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Center(
-                  child: Image.asset("lib/assets/gdsc.png", width: 43),
+                  child: GestureDetector(
+                    child: Image.asset("lib/assets/gdsc.png", width: 43),
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(gdscSnackbar);
+                    },
+                  ),
                 )
               ],
             ),
