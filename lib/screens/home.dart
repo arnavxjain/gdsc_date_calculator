@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:week_of_year/date_week_extensions.dart';
@@ -290,6 +289,7 @@ class _HomeState extends State<Home> {
           const SizedBox(height: 25),
 
           CupertinoButton(
+            disabledColor: Colors.grey,
             padding: EdgeInsets.zero,
             onPressed: () {
               if (year.text == '' || noOfDays.text == '') {
